@@ -1,0 +1,44 @@
+button {
+    color: black;
+    background-color: aliceblue;
+    border: black 1px solid;
+    border-radius: 5px;
+}
+button:focus {
+    color: black;
+    background-color: white;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+#speed_scroll{
+    display: flex;
+    flex-direction: column;
+}
+#speed_scroll_li{
+    display: flex;
+    flex-direction: row;
+}
+#speed_scroll li{
+    list-style: none;
+}
+#speed_scroll button{
+    width: 100px;
+    height: 75px;
+    font-size: 2rem;
+}
+#opacity{
+    display: flex;
+    flex-direction: column;
+}
+#opacity_li{
+    display: flex;
+    flex-direction: row;
+}
+#opacity li{
+    list-style: none;
+}
+#opacity button{
+    width: 100px;
+    height: 75px;
+    font-size: 2rem;
+}
