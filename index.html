@@ -7,33 +7,51 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
+    <form>
         <h1>Controle de l'ecran</h1>
-        <div>
-            <h2>Mot de passe</h2>
-            <input type="text">
+        <div id="controle">
+            <li>
+                <label for="passw_input">Mot de passe</label>
+                <input type="text" id="passw_input" name="Passw_input"><br>
+            </li>
+            <li>
+                <label for="test_input">Texte à afficher</label>
+                <input type="text" id="test_input" name="Test_input"><br>
+            </li>
         </div>
-        <div>
-            <h2>Texte</h2>
-            <input type="text">
-        </div>
-        <div id="speed_scroll">
+        <div id="speed">
             <h2>Vitesse d'affichage</h2>
-            <div id="speed_scroll_li">
-                <li><button>x1</button></li>
-                <li><button>x2</button></li>
-                <li><button>x3</button></li>
-            </div>
-
+            <li>
+                <label for="speed_input1">x1</label>
+                <input type="radio" id="speed_input1" name="Scroll_input"><br>
+            </li>
+            <li>
+                <label for="speed_input2">x2</label>
+                <input type="radio" id="speed_input2" name="Scroll_input"><br>
+            </li>
+            <li>
+                <label for="speed_input3">x3</label>
+                <input type="radio" id="speed_input3" name="Scroll_input"><br>
+            </li>
         </div>
         <div id="opacity">
             <h2>Opacite</h2>
-            <div id="opacity_li">
-                <li><button>0.25</button></li>
-                <li><button>0.5</button></li>
-                <li><button>1</button></li>
-            </div>
+            <li>
+                <label for="opacity_input1">0.25</label>
+                <input type="radio" id="opacity_input1" name="opacity_input"><br>
+            </li>
+            <li>
+                <label for="opacity_input2">0.5</label>
+                <input type="radio" id="opacity_input2" name="opacity_input"><br>
+            </li>
+            <li>
+                <label for="opacity_input3">1</label>
+                <input type="radio" id="opacity_input3" name="opacity_input"><br>
+            </li>
         </div>
-    </main>
+        <div id="submit">
+            <input type="submit">
+        </div>
+    </form>
 </body>
 </html>

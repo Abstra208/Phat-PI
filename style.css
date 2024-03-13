@@ -1,44 +1,32 @@
-button {
-    color: black;
-    background-color: aliceblue;
-    border: black 1px solid;
-    border-radius: 5px;
+#controle{
+    width: 25vw;
 }
-button:focus {
-    color: black;
-    background-color: white;
-    border: 1px black solid;
-    border-radius: 5px;
-}
-#speed_scroll{
-    display: flex;
-    flex-direction: column;
-}
-#speed_scroll_li{
-    display: flex;
-    flex-direction: row;
-}
-#speed_scroll li{
+#controle{
     list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
-#speed_scroll button{
-    width: 100px;
-    height: 75px;
-    font-size: 2rem;
+
+#speed{
+    width: 25vw;
 }
+#speed li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
 #opacity{
-    display: flex;
-    flex-direction: column;
-}
-#opacity_li{
-    display: flex;
-    flex-direction: row;
+    width: 25vw;
 }
 #opacity li{
     list-style: none;
-}
-#opacity button{
-    width: 100px;
-    height: 75px;
-    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
