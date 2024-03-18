@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
+    <form action="/process" method="post">
         <h1>Controle de l'ecran</h1>
         <div id="controle">
             <li>
                 <label for="passw_input">Mot de passe</label>
-                <input type="text" id="passw_input" name="Passw_input"><br>
+                <input type="text" id="passw_input" name="Passw_input" required><br>
             </li>
             <li>
                 <label for="test_input">Texte à afficher</label>
-                <input type="text" id="test_input" name="Test_input"><br>
+                <input type="text" id="test_input" name="test_input" required><br>
             </li>
         </div>
         <div id="speed">
             <h2>Vitesse d'affichage</h2>
             <li>
                 <label for="speed_input1">x1</label>
-                <input type="radio" id="speed_input1" name="Scroll_input"><br>
+                <input type="radio" id="speed_input1" name="Scroll_input" required><br>
             </li>
             <li>
                 <label for="speed_input2">x2</label>
@@ -38,7 +38,7 @@
             <h2>Opacite</h2>
             <li>
                 <label for="opacity_input1">0.25</label>
-                <input type="radio" id="opacity_input1" name="opacity_input"><br>
+                <input type="radio" id="opacity_input1" name="opacity_input" required><br>
             </li>
             <li>
                 <label for="opacity_input2">0.5</label>
