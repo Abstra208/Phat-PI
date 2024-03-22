@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&display=swap');
+
+form{
+    width: fit-content;
+}
+
+img{
+    max-height: 200px;
+}
+
+#info{
+    margin-right: 30px;
+}
+#info h1{
+    margin-bottom: 30px;
+    font-family: "Hepta Slab", serif;
+}
+#info p{
+    width: 200px;
+}
+
+#connection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    width: 30vw;
+    height: fit-content;
+}
+#connection h1{
+    margin-bottom: 25px;
+}
+#connection_input{
+    display: flex;
+    flex-direction: column;
+}
