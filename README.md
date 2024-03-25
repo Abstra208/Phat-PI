@@ -23,7 +23,7 @@ python magic to finish the environment: <br>
 and
 `. .venv/bin/activate`
 
-and finaly, install flask in the environment
+and finaly, install flask in the environment <br>
 `pip install Flask`
 
 **more info to come, and this is not finish**
