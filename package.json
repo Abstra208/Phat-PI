@@ -1,5 +1,27 @@
 {
   "dependencies": {
-    "flask": "^0.2.10"
-  }
+    "flask": "^0.2.10",
+    "python": "^0.0.4"
+  },
+  "name": "path-pi",
+  "description": "**Only work on raspberry pi**",
+  "version": "1.0.3",
+  "main": "app.py",
+  "scripts": {
+    "test": "flask --app app run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abstra208/Path-PI.git"
+  },
+  "keywords": [
+    "raspberry PI",
+    "Scroll Phat Hd"
+  ],
+  "author": "abstra208",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abstra208/Path-PI/issues"
+  },
+  "homepage": "https://github.com/Abstra208/Path-PI#readme"
 }
