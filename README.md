@@ -13,10 +13,10 @@ install scrollpathsd: <br>
 to get started copy the code blow in the console:
 
 create a new directory <br>
-`mkdir myproject`
+`mkdir path-pi`
 
 select the new directory <br>
-`cd myproject`
+`cd path-pi`
 
 python magic to finish the environment: <br>
 `python3 -m venv .venv`
