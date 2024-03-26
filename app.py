@@ -1,20 +1,21 @@
-from flask import request
+from flask import request, render_template, app
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    error = 'Mot de passe invalide'
+    error = 'Erreur inconnue'
     if request.method == 'POST':
-        if valid_passwd(request.form['valid_login']):
-            return set_screen(request.form['test_input'],request.form['Scroll_input'], request.form['opacity_input'])
-        else:
-            error = 'Invalid username/password'
-    # the code below is executed if the request method
-    # was GET or the credentials were invalid
-    return render_template('error.html', error=error)
+        connection(request.form['username'], request.form['passw'])
+    if request.method == 'GET':
+        render_template('/html/login.html')
+    return render_template('login.html', error=error)
 
-def valid_passwd(passwd):
-    if passwd == "123456":
-        return
+def connection(username, passwd):
+    if username == "admin" and passwd == "123456":
+        set_screen(request.form['test_input'],request.form['Scroll_input'], request.form['opacity_input'])
+        render_template('html/login.html')
+    else:
+        error = 'Nom d/utilisateur ou mot de passe invalide'
+        return render_template('login.html', error=error)
 
 def set_screen(text, scroll, opacity):
     set_file = open('info.txt', 'a')
