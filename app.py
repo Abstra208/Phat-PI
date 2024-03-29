@@ -10,7 +10,3 @@ def login():
     error = 'Erreur inconnue'
     if request.method == 'POST':
         return render_template('index.html')
-        
-@app.route('/succes')
-def succes():
-    return "Authentification réussie !"
