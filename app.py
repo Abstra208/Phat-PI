@@ -9,11 +9,8 @@ def index():
 def login():
     error = 'Erreur inconnue'
     if request.method == 'POST':
-        username = request.form['username']
-        passwd = request.form['passwd']
-        if username == "admin" and passwd == "123456":
-            return render_template('index.html')
-        else:
-            error = 'Nom d/utilisateur ou mot de passe invalide'
-            return render_template('login.html', error=error)
-    return render_template('login.html', error=error)
+        return render_template('index.html')
+        
+@app.route('/succes')
+def succes():
+    return "Authentification réussie !"
