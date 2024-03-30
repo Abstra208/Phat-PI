@@ -1,0 +1,91 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: green 1px solid;
+}
+body{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    border-radius: 10px;
+    border: black 2px solid;
+}
+
+/**Index page**/
+
+#home{
+    width: 45vw;
+}
+#controle{
+    width: 25vw;
+}
+#controle{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#speed{
+    width: 25vw;
+    color: white;
+}
+#speed li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+#opacity{
+    width: 25vw;
+    color: white;
+}
+#opacity li{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/**Login page**/
+
+@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&display=swap');
+
+#login{
+    width: fit-content;
+}
+
+#login_picture{
+    max-width: 125px;
+    border-radius: 100%;
+}
+
+#connection{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    height: fit-content;
+}
+#connection h1{
+    text-align: center;
+}
+#connection_input{
+    display: flex;
+    flex-direction: column;
+}
