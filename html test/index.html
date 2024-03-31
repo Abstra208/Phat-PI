@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Path Pi</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <form id="login" action="/login" method="POST">
         <div id="connection">
-            <img id="login_picture" src="img/picture.svg" alt="picture">
+            <img src="css/img/picture.svg" alt="picture">
             <div id="connection_input">
-                <label for="username">Name d'utilisateur</label>
-                <input type="text" name="username" id="username">
-                <label for="passw">Mot de passe</label>
-                <input type="text" name="passw" id="passw">
-            </div>
-            <div id="connection_submit">
+                <div class="">
+                    <label class="noBlur" for="username">Nom d'utilisateur</label>
+                    <div class="controle" onclick="inputdivtoinput('username')">
+                        <input type="text" name="username" id="username" class="login_input Blur">
+                    </div>
+                </div>
+                <div>
+                    <label class="noBlur" for="passw">Mot de passe</label>
+                    <div class="controle" onclick="inputdivtoinput('passwd')">
+                        <input type="password" name="passwd" id="passwd" class="login_input Blur">
+                    </div>
+                </div>
                 <input type="submit" value="Connexion">
             </div>
         </div>
