@@ -14,7 +14,7 @@ def login():
     error = 'Erreur inconnue'
     if request.method == 'POST':
         Username = request.form['username']
-        Passwd = request.form['passw']
+        Passwd = request.form['passwd']
 
         if Username in Users and Users[Username] == Passwd:
             return render_template('index.html', user=Username)

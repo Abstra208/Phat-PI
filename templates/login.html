@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <form action="/login" method="POST">
-        <div id="info">
-            <h1>Path Pi</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptates qui, suscipit ipsam nihil repellendus necessitatibus explicabo vitae mollitia nam totam quae quos, laboriosam sapiente quia. Eius ipsum dolores architecto?</p>
-        </div>
+    <form id="login" action="/login" method="POST">
         <div id="connection">
-            <h1>Ecran de connection</h1>
+            <img src="{{ url_for('static', filename='users/picture.svg') }}" alt="picture">
             <div id="connection_input">
-                <label for="username">Name d'utilisateur</label>
-                <input type="text" name="username" id="username">
-                <label for="passw">Mot de passe</label>
-                <input type="text" name="passw" id="passw">
-            </div>
-            <div id="connection_submit">
-                <input type="submit">
+                <div class="">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" name="username" id="username" class="login_input">
+                </div>
+                <div>
+                    <label for="passwd">Mot de passe</label>
+                    <input type="password" name="passwd" id="passwd" class="login_input">
+                </div>
+                <input type="submit" value="Connexion">
             </div>
         </div>
-        <img src="{{ url_for('static', filename='css/img/Raspberry_Pi_logo.svg') }}" alt="">
     </form>
 </body>
 </html>

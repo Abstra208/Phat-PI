@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
     padding: 0;
     margin: 0;
 }
 body{
     background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
 }
 form{
@@ -15,15 +18,13 @@ form{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    backdrop-filter: blur(5px);
     padding: 30px;
-    border-radius: 15px;
-    border: black 2px solid;
+    border-radius: 10px;
 }
 
 /**Index page**/
 
-form{
+#home{
     width: 45vw;
 }
 #controle{
@@ -63,25 +64,17 @@ form{
 
 /**Login page**/
 
-@import url('https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@500&display=swap');
-
-form{
+#login{
     width: fit-content;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.47);
+    background: rgba(255, 255, 255, 0.46);
+    backdrop-filter: blur(1rem);
 }
 
-img{
-    max-height: 200px;
-}
-
-#info{
-    margin-right: 30px;
-}
-#info h1{
-    margin-bottom: 30px;
-    font-family: "Hepta Slab", serif;
-}
-#info p{
-    width: 200px;
+#login img{
+    max-width: 125px;
+    border-radius: 100%;
+    margin-bottom: 2rem;
 }
 
 #connection{
@@ -89,15 +82,51 @@ img{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-right: 30px;
-    width: 30vw;
+    width: 250px;
     height: fit-content;
 }
 #connection h1{
     text-align: center;
-    margin-bottom: 25px;
 }
 #connection_input{
     display: flex;
     flex-direction: column;
+}
+.login_input{
+    width: 250px;
+    height: 25px;
+    border: none;
+    outline: none;
+    font-size: .8rem;
+    backdrop-filter: blur(1rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    clear: both;
+    position: relative;
+    text-align: inherit;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.32);
+    margin-bottom: 0.8rem;
+    margin-top: 0.2rem;
+    padding: 15px;
+}
+
+#connection_input input[type=submit]{
+    background-color: hsl(216, 90%, 54%);
+    border-color: transparent;
+    color: #ffffff;
+    -webkit-tap-highlight-color: transparent;
+    height: auto;
+    font-size: 0.875rem;
+    padding-top: calc(0.34375rem - 1px);
+    padding-bottom: calc(0.34375rem - 1px);
+    border-radius: 15px;
+    margin-top: 1rem;
+}
+#connection_input label{
+    color: #917e7e;
+    font-size: 0.875rem;
+    font-family: "Roboto", sans-serif;
 }
