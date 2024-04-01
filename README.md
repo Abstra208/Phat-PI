@@ -1,16 +1,16 @@
 # This is not finish
 ## Website for controlling a scrollpathsd screen
-**Only work on raspberry pi**
+**Only work on Raspberry Pi**
 
-to get started make sure you have python install: <br>
+to get started make sure you have Python install: <br>
 `sudo apt install py`
 
 install scrollpathsd: <br>
 `curl https://get.pimoroni.com/scrollphathd | bash`
 
-### It's now time to setup the environment
+### It's now time to set the environment
 
-to get started copy the code blow in the console:
+to get started copy the code below in the console:
 
 create a new directory <br>
 `mkdir path-pi`
@@ -27,7 +27,7 @@ install flask in the environment <br>
 `pip install Flask`
 
 install this project <br>
-`npm i path-pi`
+`npm install path-pi`
 
 
-**more info to come, and this is not finish**
+**More info to come, and this is not finished**
