@@ -98,7 +98,6 @@ form{
     border: none;
     outline: none;
     font-size: .8rem;
-    backdrop-filter: blur(1rem);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,6 +110,7 @@ form{
     margin-bottom: 0.8rem;
     margin-top: 0.2rem;
     padding: 15px;
+    color: black;
 }
 
 #connection_input input[type=submit]{
