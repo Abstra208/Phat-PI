@@ -5,8 +5,8 @@
     "scroll-phat-hd": "^1.3.0"
   },
   "name": "path-pi",
-  "description": "**Only work on raspberry pi**",
-  "version": "1.1.1",
+  "description": "Website for controlling a scrollpathsd screen ",
+  "version": "1.1.2",
   "main": "app.py",
   "scripts": {
     "test": "flask --app app run"
