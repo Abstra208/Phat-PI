@@ -1,4 +1,4 @@
-from flask import request, render_template, Flask, redirect, url_for
+from flask import request, render_template, Flask, redirect, url_for, make_response
 app = Flask(__name__)
 
 Users = {
@@ -14,7 +14,9 @@ def index():
         Passwd = request.form['passwd']
 
         if Username in Users and Users[Username] == Passwd:
-            return render_template('index.html', user=Username)
+            resp = make_response(render_template('index.html', user=Username))
+            resp.set_cookie('User', Username)
+            return resp
         else:
             return render_template('login.html', erreur='Identifiants invalides')
 
