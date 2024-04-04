@@ -3,55 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <form action="/process" method="post">
-        <h1>Controle de l'ecran</h1>
-        <div id="controle">
-            <li>
-                <label for="passw_input">Mot de passe</label>
-                <input type="text" id="passw_input" name="Passw_input" required><br>
-            </li>
-            <li>
-                <label for="test_input">Texte à afficher</label>
-                <input type="text" id="test_input" name="test_input" required><br>
-            </li>
-        </div>
-        <div id="speed">
-            <h2>Vitesse d'affichage</h2>
-            <li>
-                <label for="speed_input1">x1</label>
-                <input type="radio" id="speed_input1" name="Scroll_input" required><br>
-            </li>
-            <li>
-                <label for="speed_input2">x2</label>
-                <input type="radio" id="speed_input2" name="Scroll_input"><br>
-            </li>
-            <li>
-                <label for="speed_input3">x3</label>
-                <input type="radio" id="speed_input3" name="Scroll_input"><br>
-            </li>
-        </div>
-        <div id="opacity">
-            <h2>Opacite</h2>
-            <li>
-                <label for="opacity_input1">0.25</label>
-                <input type="radio" id="opacity_input1" name="opacity_input" required><br>
-            </li>
-            <li>
-                <label for="opacity_input2">0.5</label>
-                <input type="radio" id="opacity_input2" name="opacity_input"><br>
-            </li>
-            <li>
-                <label for="opacity_input3">1</label>
-                <input type="radio" id="opacity_input3" name="opacity_input"><br>
-            </li>
-        </div>
-        <div id="submit">
-            <input type="submit">
-        </div>
-    </form>
+<body id="home">
+    <div id="sidebar">
+        Path Pi
+    </div>
+    <div id="main-content">
+        <form action="/process" method="post" id="controle">
+            <h1>Bienvenue {{ session['username'] }}</h1>
+            <h1>Controle de l'ecran</h1>
+            <div id="controle">
+                <li>
+                    <label for="test_input">Texte à afficher</label>
+                    <input type="text" id="test_input" name="test_input" required><br>
+                </li>
+            </div>
+            <div id="speed">
+                <h2>Vitesse d'affichage</h2>
+                <li>
+                    <label for="speed_input1">x1</label>
+                    <input type="radio" id="speed_input1" name="Scroll_input" required><br>
+                </li>
+                <li>
+                    <label for="speed_input2">x2</label>
+                    <input type="radio" id="speed_input2" name="Scroll_input"><br>
+                </li>
+                <li>
+                    <label for="speed_input3">x3</label>
+                    <input type="radio" id="speed_input3" name="Scroll_input"><br>
+                </li>
+            </div>
+            <div id="opacity">
+                <h2>Opacite</h2>
+                <li>
+                    <label for="opacity_input1">0.25</label>
+                    <input type="radio" id="opacity_input1" name="opacity_input" required><br>
+                </li>
+                <li>
+                    <label for="opacity_input2">0.5</label>
+                    <input type="radio" id="opacity_input2" name="opacity_input"><br>
+                </li>
+                <li>
+                    <label for="opacity_input3">1</label>
+                    <input type="radio" id="opacity_input3" name="opacity_input"><br>
+                </li>
+            </div>
+            <input id="screen_submit" type="submit">
+        </form>
+        <form action="/logout">
+            <input id="deconnection_submit" type="submit">
+        </form>
+    </div>
 </body>
 </html>

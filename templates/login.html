@@ -6,22 +6,25 @@
     <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
-<body>
-    <form id="login" action="/" method="POST">
-        <div id="connection">
-            <img src="{{ url_for('static', filename='users/picture.svg') }}" alt="picture">
-            <div id="connection_input">
-                <div class="">
-                    <label for="username">Nom d'utilisateur</label>
-                    <input type="text" name="username" id="username" class="login_input">
-                </div>
-                <div>
-                    <label for="passwd">Mot de passe</label>
-                    <input type="password" name="passwd" id="passwd" class="login_input">
-                </div>
-                <input type="submit" value="Connexion">
+<body id="login">
+    <form id="Connexion" action="/" method="POST">
+        <img src="{{ url_for('static', filename='users/picture.svg') }}" alt="picture">
+        <div id="connection_input">
+            <div class="">
+                <label for="username">Nom d'utilisateur</label>
+                <input type="text" name="username" id="username" class="login_input">
             </div>
+            <div>
+                <label for="passwd">Mot de passe</label>
+                <input type="password" name="passwd" id="passwd" class="login_input">
+            </div>
+            <input type="submit" value="Connexion">
         </div>
     </form>
+    <ul id="error">
+        {% if error %}
+        <p>{{ error }}</p>
+        {% endif %}
+    </ul>
 </body>
 </html>
