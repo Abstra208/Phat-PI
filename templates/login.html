@@ -22,6 +22,11 @@
                 <input type="submit" value="Connexion">
             </div>
         </div>
+        <ul>
+            {% if error %}
+            <p>{{ error }}</p>
+            {% endif %}
+        </ul>
     </form>
 </body>
 </html>
