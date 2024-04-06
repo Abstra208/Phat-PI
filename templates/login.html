@@ -20,6 +20,11 @@
             </div>
             <input type="submit" value="Connexion">
         </div>
+        <ul>
+            {% if error %}
+            <p>{{ error }}</p>
+            {% endif %}
+        </ul>
     </form>
     <ul id="error">
         {% if error %}

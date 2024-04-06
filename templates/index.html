@@ -6,6 +6,7 @@
     <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+<<<<<<< HEAD
 <body id="home">
     <div id="sidebar">
         Path Pi
@@ -56,5 +57,51 @@
             <input id="deconnection_submit" type="submit">
         </form>
     </div>
+=======
+<body>
+    <form action="/process" method="post">
+        <h1>Bienvenue {{ session['username'] }}</h1>
+        <h1>Controle de l'ecran</h1>
+        <div id="controle">
+            <li>
+                <label for="test_input">Texte à afficher</label>
+                <input type="text" id="test_input" name="test_input" required><br>
+            </li>
+        </div>
+        <div id="speed">
+            <h2>Vitesse d'affichage</h2>
+            <li>
+                <label for="speed_input1">x1</label>
+                <input type="radio" id="speed_input1" name="Scroll_input" required><br>
+            </li>
+            <li>
+                <label for="speed_input2">x2</label>
+                <input type="radio" id="speed_input2" name="Scroll_input"><br>
+            </li>
+            <li>
+                <label for="speed_input3">x3</label>
+                <input type="radio" id="speed_input3" name="Scroll_input"><br>
+            </li>
+        </div>
+        <div id="opacity">
+            <h2>Opacite</h2>
+            <li>
+                <label for="opacity_input1">0.25</label>
+                <input type="radio" id="opacity_input1" name="opacity_input" required><br>
+            </li>
+            <li>
+                <label for="opacity_input2">0.5</label>
+                <input type="radio" id="opacity_input2" name="opacity_input"><br>
+            </li>
+            <li>
+                <label for="opacity_input3">1</label>
+                <input type="radio" id="opacity_input3" name="opacity_input"><br>
+            </li>
+        </div>
+        <div id="submit">
+            <input type="submit">
+        </div>
+    </form>
+>>>>>>> 333ad58b743f5eacfa6f28b9a8cbcd27d3418f74
 </body>
 </html>
