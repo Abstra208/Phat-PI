@@ -1,11 +1,22 @@
 import scrollphathd as sphd
 import time
+import json
 
-file = open('info.txt', 'a')
-text = file.read
-sphd.clear()
-sphd.write_string(text)
 while True:
-    sphd.show()
-    sphd.scroll(1)
-    time.sleep(0.05)
+    file = open('info.txt', 'a')
+    json_string = file.read
+    data = json.loads(json_string)
+    text = data['text']
+    text_lenght = len(text)
+    opacity = data['opacity']
+    speed = data['speed']
+    
+    sphd.clear()
+    sphd.write_string(text)
+    sphd.set_brightness(opacity)
+    for _ in range(text_lenght):
+        sphd.show()
+        sphd.scroll(1)
+        time.sleep(speed)
+        
+    file.close()

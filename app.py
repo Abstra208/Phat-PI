@@ -1,5 +1,6 @@
 from flask import request, render_template, Flask, redirect, url_for, session
 app = Flask(__name__)
+import json
 
 app.secret_key = b'36f81d8585f136a0536a350f69443bf8e26bcbc8407e8dc3bcf584bd92ba4cd6' # make sure to change this before using, and keep it secret (if you want to generate a secret one, you can use { python -c 'import secrets; print(secrets.token_hex())' } )
 
@@ -31,3 +32,24 @@ def logout():
     session['username'] = ""
     session['passwd'] = ""
     return redirect(url_for('login'))
+
+@app.route('/process', methods=['GET', 'POST'])
+def process():
+    if request.method == 'POST':
+        if session['username'] != "":
+            Speed = request.form['Scroll_input']
+            Opacity = request.form['opacity_input']
+            Text = request.form['test_input']
+            data = {
+                "speed": Speed,
+                "opacity": Opacity,
+                "text": Text
+            }
+            json_string = json.dumps(data)
+            f = open("screen.txt", "a")
+            f.write(json_string)
+            f.close()
+            return render_template('index.html', info=json_string)
+    elif request.method == 'GET':
+        if session['username'] == "":
+            return render_template('login.html')

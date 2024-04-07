@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body id="login">
-    <form id="Connexion" action="/" method="POST">
+    <form id="connection" action="/" method="POST">
         <img src="{{ url_for('static', filename='users/picture.svg') }}" alt="picture">
         <div id="connection_input">
             <div class="">
@@ -20,11 +20,6 @@
             </div>
             <input type="submit" value="Connexion">
         </div>
-        <ul>
-            {% if error %}
-            <p>{{ error }}</p>
-            {% endif %}
-        </ul>
     </form>
     <ul id="error">
         {% if error %}
