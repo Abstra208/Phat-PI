@@ -26,8 +26,5 @@ and
 install flask in the environment <br>
 `pip install Flask`
 
-install this project <br>
-`npm install path-pi`
-
 
 **More info to come, and this is not finished**
