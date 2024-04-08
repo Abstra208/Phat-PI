@@ -3,8 +3,8 @@ import time
 import json
 
 while True:
-    file = open('screen.txt', 'a')
-    json_string = file.read
+    with open("screen.json", "r") as file:
+        json_string = file.read()
     data = json.loads(json_string)
     text = data['text']
     text_lenght = len(text)
@@ -12,11 +12,8 @@ while True:
     speed = data['speed']
     
     sphd.clear()
-    sphd.write_string(text)
-    sphd.set_brightness(opacity)
-    for _ in range(text_lenght):
+    sphd.write_string(text+'          ')
+    for _ in range(text_lenght*5+(text_lenght-1)):
         sphd.show()
         sphd.scroll(1)
-        time.sleep(speed)
-
-    file.close()
+        time.sleep(0.25)

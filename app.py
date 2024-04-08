@@ -46,7 +46,8 @@ def process():
                 "text": Text
             }
             json_string = json.dumps(data)
-            f = open("screen.txt", "a")
+            f = open("screen.json", "a")
+            f.truncate(0)
             f.write(json_string)
             f.close()
             return render_template('index.html', info=json_string)
