@@ -12,10 +12,15 @@ while True:
     speed = data['speed']
     
     sphd.clear()
+<<<<<<< HEAD
     sphd.flip(x=True,y=True)
     sphd.set_brightness(float(opacity))
     sphd.write_string(text+' ')
     for _ in range(text_lenght*6+(text_lenght)):
+=======
+    sphd.write_string(text+' ')
+    for _ in range(text_lenght*5+(text_lenght-1)):
+>>>>>>> 50f244de9603b1181414caeed7170d1657f978f6
         sphd.show()
         sphd.scroll(1)
         time.sleep(float(speed))
