@@ -12,7 +12,7 @@ while True:
     speed = data['speed']
     
     sphd.clear()
-    sphd.write_string(text+'          ')
+    sphd.write_string(text+' ')
     for _ in range(text_lenght*5+(text_lenght-1)):
         sphd.show()
         sphd.scroll(1)
