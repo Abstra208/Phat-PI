@@ -8,7 +8,7 @@
 </head>
 <body id="home">
     <div id="sidebar">
-        Path Pi
+        Phat Pi
     </div>
     <div id="main-content">
         <form action="/process" method="post" id="controle">
@@ -23,16 +23,16 @@
             <div id="speed">
                 <h2>Vitesse d'affichage</h2>
                 <li>
-                    <label for="speed_input1">x1</label>
-                    <input type="radio" id="speed_input1" name="Scroll_input" required value="1"><br>
+                    <label for="speed_input1">50%</label>
+                    <input type="radio" id="speed_input1" name="Scroll_input" required value=".2"><br>
                 </li>
                 <li>
-                    <label for="speed_input2">x2</label>
-                    <input type="radio" id="speed_input2" name="Scroll_input" value="2"><br>
+                    <label for="speed_input2">100%</label>
+                    <input type="radio" id="speed_input2" name="Scroll_input" value=".1"><br>
                 </li>
                 <li>
-                    <label for="speed_input3">x3</label>
-                    <input type="radio" id="speed_input3" name="Scroll_input" value="3"><br>
+                    <label for="speed_input3">200%</label>
+                    <input type="radio" id="speed_input3" name="Scroll_input" value=".05"><br>
                 </li>
             </div>
             <div id="opacity">
@@ -50,10 +50,10 @@
                     <input type="radio" id="opacity_input3" name="opacity_input" value="1"><br>
                 </li>
             </div>
-            <input id="screen_submit" type="submit">
+            <input id="screen_submit" type="submit" value="Mettre a jour">
         </form>
         <form action="/logout">
-            <input id="deconnection_submit" type="submit">
+            <input id="deconnection_submit" type="submit" value="Se deconnecter">
         </form>
         <ul>
             {% if info %}
