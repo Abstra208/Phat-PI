@@ -15,7 +15,8 @@ while True:
     sphd.flip(x=True,y=True)
     sphd.set_brightness(float(opacity))
     sphd.write_string(text+' ')
-    for _ in range(text_lenght*6+(text_lenght)):
+    time.sleep(1)
+    for _ in range(text_lenght*5+(text_lenght)+5):
         sphd.show()
         sphd.scroll(1)
         time.sleep(float(speed))
