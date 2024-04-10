@@ -11,6 +11,9 @@ Users = {
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
+        if session['username'] != "":
+            if session['username'] in Users and Users[session['username']] == session['passwd']:
+                return render_template('index.html')
         return redirect(url_for('login'))
     elif request.method == 'POST':
         Username = request.form['username']

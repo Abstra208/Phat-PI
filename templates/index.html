@@ -7,8 +7,27 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body id="home">
-    <div id="sidebar">
-        Phat Pi
+    <div id="topbar">
+        <div class="user">
+            <img class="topicon" src="{{ url_for('static', filename='img/user.svg') }}" alt="">
+            <div class="user-content">
+                <h1>Compte</h1>
+                <div class="content-flex">
+                    <img src="{{ url_for('static', filename='users/admin.png') }}" alt="">
+                    <h2>Nom d'utilisateur</h2>
+                    <h3>{{ session['username'] }}</h3>
+                </div>
+                <form action="/logout">
+                    <input id="deconnection_submit" type="submit" value="Se deconnecter">
+                </form>
+            </div>
+        </div>
+        <div class="setting">
+            <img class="topicon" src="{{ url_for('static', filename='img/setting.svg') }}" alt="">
+            <div class="setting-content">
+
+            </div>
+        </div>
     </div>
     <div id="main-content">
         <form action="/process" method="post" id="controle">
@@ -52,14 +71,14 @@
             </div>
             <input id="screen_submit" type="submit" value="Mettre a jour">
         </form>
-        <form action="/logout">
-            <input id="deconnection_submit" type="submit" value="Se deconnecter">
-        </form>
         <ul>
             {% if info %}
             <p>{{ info }}</p>
             {% endif %}
         </ul>
+    </div>
+    <div id="bottombar">
+        Phat Pi 1.0.0
     </div>
 </body>
 </html>
