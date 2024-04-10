@@ -28,6 +28,9 @@ def index():
 
 @app.route('/login')
 def login():
+    if session['username'] != "":
+        if session['username'] in Users and Users[session['username']] == session['passwd']:
+            return redirect(url_for('index'))
     return render_template('login.html')
 @app.route('/logout')
 def logout():
