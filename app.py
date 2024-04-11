@@ -4,9 +4,10 @@ import json
 
 app.secret_key = b'36f81d8585f136a0536a350f69443bf8e26bcbc8407e8dc3bcf584bd92ba4cd6' # make sure to change this before using, and keep it secret (if you want to generate a secret one, you can use { python -c 'import secrets; print(secrets.token_hex())' } )
 
-Users = {
-    'admin': '123456',
-}
+with open("users.json", "r") as file:
+    json_users = file.read()
+data_users = json.loads(json_users)
+Users = data_users
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -41,14 +42,14 @@ def logout():
 @app.route('/process', methods=['GET', 'POST'])
 def process():
     if request.method == 'POST':
-        if session['username'] != "":
+        if session['username'] in Users and Users[session['username']] == session['passwd']:
             Speed = request.form['Scroll_input']
             Opacity = request.form['opacity_input']
             Text = request.form['test_input']
             data = {
                 "speed": Speed,
                 "opacity": Opacity,
-                "text": Text
+                "text": Text,
             }
             json_string = json.dumps(data)
             f = open("screen.json", "a")
@@ -57,5 +58,6 @@ def process():
             f.close()
             return render_template('index.html', info=json_string)
     elif request.method == 'GET':
-        if session['username'] == "":
-            return render_template('login.html')
+        if session.get('username'):
+            if session['username'] == "":
+                return render_template('login.html')
