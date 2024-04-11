@@ -11,7 +11,7 @@ Users = {
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        if session['username'] != "":
+        if session.get('username'):
             if session['username'] in Users and Users[session['username']] == session['passwd']:
                 return render_template('index.html')
         return redirect(url_for('login'))
@@ -28,7 +28,7 @@ def index():
 
 @app.route('/login')
 def login():
-    if session['username'] != "":
+    if session.get('username'):
         if session['username'] in Users and Users[session['username']] == session['passwd']:
             return redirect(url_for('index'))
     return render_template('login.html')

@@ -5,27 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
 </head>
 <body id="home">
     <div id="topbar">
         <div class="user">
-            <img class="topicon" src="{{ url_for('static', filename='img/user.svg') }}" alt="">
-            <div class="user-content">
+            <img class="topicon" id="icon-user" src="{{ url_for('static', filename='img/user.svg') }}" alt="">
+            <div class="icon-content" id="UserDiv">
                 <h1>Compte</h1>
                 <div class="content-flex">
                     <img src="{{ url_for('static', filename='users/admin.png') }}" alt="">
                     <h2>Nom d'utilisateur</h2>
                     <h3>{{ session['username'] }}</h3>
+                    <form action="/logout">
+                        <input id="deconnection_submit" type="submit" value="Se deconnecter">
+                    </form>
                 </div>
-                <form action="/logout">
-                    <input id="deconnection_submit" type="submit" value="Se deconnecter">
-                </form>
             </div>
         </div>
         <div class="setting">
-            <img class="topicon" src="{{ url_for('static', filename='img/setting.svg') }}" alt="">
-            <div class="setting-content">
-
+            <img class="topicon" id="icon-sett" src="{{ url_for('static', filename='img/setting.svg') }}" alt="">
+            <div class="icon-content" id="SettDiv">
+                <h1>Parametre</h1>
+                <div class="content-flex">
+                    <h2>Parametre 1</h2>
+                    <h3>Value 1</h3>
+                    <h2>Parametre 2</h2>
+                    <h3>Value 2</h3>
+                    <h2>Parametre 3</h2>
+                    <h3>Value 3</h3>
+                </div>
             </div>
         </div>
     </div>
@@ -55,17 +64,17 @@
                 </li>
             </div>
             <div id="opacity">
-                <h2>Opacite</h2>
+                <h2>Luminosité</h2>
                 <li>
-                    <label for="opacity_input1">0.25</label>
+                    <label for="opacity_input1">50%</label>
                     <input type="radio" id="opacity_input1" name="opacity_input" required value="0.25"><br>
                 </li>
                 <li>
-                    <label for="opacity_input2">0.5</label>
+                    <label for="opacity_input2">100%</label>
                     <input type="radio" id="opacity_input2" name="opacity_input" value="0.5"><br>
                 </li>
                 <li>
-                    <label for="opacity_input3">1</label>
+                    <label for="opacity_input3">200%</label>
                     <input type="radio" id="opacity_input3" name="opacity_input" value="1"><br>
                 </li>
             </div>
