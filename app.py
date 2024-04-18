@@ -58,6 +58,4 @@ def process():
             f.close()
             return render_template('index.html', info=json_string)
     elif request.method == 'GET':
-        if session.get('username'):
-            if session['username'] == "":
-                return render_template('login.html')
+        return redirect(url_for('index'))
