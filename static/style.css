@@ -85,10 +85,10 @@ body{
 #controle{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
     padding: 30px;
     border-radius: 10px;
+    backdrop-filter: blur(1rem);
 }
 
 #deconnection_submit{
