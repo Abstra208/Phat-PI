@@ -57,5 +57,4 @@ def process():
             f.write(json_string)
             f.close()
             return render_template('index.html', info=json_string)
-    elif request.method == 'GET':
-        return redirect(url_for('index'))
+    return redirect(url_for('index'))
