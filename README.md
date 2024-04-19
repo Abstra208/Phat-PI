@@ -37,7 +37,7 @@ curl https://get.pimoroni.com/scrollphathd | bash
 ```
 You do not need to do a full install, but you still can if you want
 
-**The Scroll Phat HD screen api must only be run on a Raspberry Pi using the official software (with or without the graphic interface)**
+**The Scroll Phat HD screen api must only be run on a Raspberry Pi using the official OS (with or without the graphic interface)**
 
 ## IMPORTANT
 
