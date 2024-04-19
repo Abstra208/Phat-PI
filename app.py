@@ -2,7 +2,7 @@ from flask import request, render_template, Flask, redirect, url_for, session
 app = Flask(__name__)
 import json
 
-app.secret_key = b'36f81d8585f136a0536a350f69443bf8e26bcbc8407e8dc3bcf584bd92ba4cd6' # make sure to change this before using, and keep it secret (if you want to generate a secret one, you can use { python -c 'import secrets; print(secrets.token_hex())' } )
+app.secret_key = b'36f81d8585f136a0536a350f69443bf8e26bcbc8407e8dc3bcf584bd92ba4cd6'
 
 with open("users.json", "r") as file:
     json_users = file.read()
@@ -14,7 +14,11 @@ def index():
     if request.method == 'GET':
         if session.get('username'):
             if session['username'] in Users and Users[session['username']] == session['passwd']:
-                return render_template('index.html')
+                with open("screen.json", "r") as file:
+                    json_info = file.read()
+                data_info = json.loads(json_info)
+                screen_info = data_info
+                return render_template('index.html', screen_info=screen_info)
         return redirect(url_for('login'))
     elif request.method == 'POST':
         Username = request.form['username']
@@ -23,7 +27,11 @@ def index():
         if Username in Users and Users[Username] == Passwd:
             session['username'] = Username
             session['passwd'] = Passwd
-            return render_template('index.html')
+            with open("screen.json", "r") as file:
+                json_info = file.read()
+            data_info = json.loads(json_info)
+            screen_info = data_info
+            return render_template('index.html', screen_info=screen_info)
         else:
             return render_template('login.html', error='Identifiants invalides')
 
@@ -56,5 +64,9 @@ def process():
             f.truncate(0)
             f.write(json_string)
             f.close()
-            return render_template('index.html', info=json_string)
+            with open("screen.json", "r") as file:
+                 json_info = file.read()
+            data_info = json.loads(json_info)
+            screen_info = data_info
+            return render_template('index.html', screen_info=screen_info)
     return redirect(url_for('index'))

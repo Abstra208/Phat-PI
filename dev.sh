@@ -1,2 +1,2 @@
-lxterminal --command="gunicorn app:app" &
+lxterminal --command="flask run" &
 lxterminal --command="python3 screen.py" &

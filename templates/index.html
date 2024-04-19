@@ -84,6 +84,17 @@
             <p>{{ info }}</p>
             {% endif %}
         </ul>
+        <div id="screen_info">
+            <h1>Information de l'ecran</h1>
+            <div id="screen_info_content">
+                <h2>Texte affiché</h2>
+                <h3>{{ screen_info['text'] }}</h3>
+                <h2>Vitesse d'affichage</h2>
+                <h3>{{ screen_info['speed'] }}</h3>
+                <h2>Luminosité</h2>
+                <h3>{{ screen_info['opacity'] }}</h3>
+            </div>
+        </div>
     </div>
     <div id="bottombar">
         Phat Pi 1.0.0
