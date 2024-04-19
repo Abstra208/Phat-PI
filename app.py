@@ -3,6 +3,7 @@ app = Flask(__name__)
 import json
 
 app.secret_key = b'36f81d8585f136a0536a350f69443bf8e26bcbc8407e8dc3bcf584bd92ba4cd6'
+app_version = "1.1.0"
 
 with open("users.json", "r") as file:
     json_users = file.read()
@@ -18,7 +19,7 @@ def index():
                     json_info = file.read()
                 data_info = json.loads(json_info)
                 screen_info = data_info
-                return render_template('index.html', screen_info=screen_info)
+                return render_template('index.html', screen_info=screen_info, version = app_version)
         return redirect(url_for('login'))
     elif request.method == 'POST':
         Username = request.form['username']
@@ -31,7 +32,7 @@ def index():
                 json_info = file.read()
             data_info = json.loads(json_info)
             screen_info = data_info
-            return render_template('index.html', screen_info=screen_info)
+            return render_template('index.html', screen_info=screen_info, version = app_version)
         else:
             return render_template('login.html', error='Identifiants invalides')
 
@@ -68,5 +69,5 @@ def process():
                  json_info = file.read()
             data_info = json.loads(json_info)
             screen_info = data_info
-            return render_template('index.html', screen_info=screen_info)
+            return render_template('index.html', screen_info=screen_info, version = app_version)
     return redirect(url_for('index'))
