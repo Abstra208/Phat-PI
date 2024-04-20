@@ -6,6 +6,7 @@
     <title>Path Pi</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.svg') }}" type="image/x-icon">
 </head>
 <body id="home">
     <div id="topbar">
@@ -39,65 +40,72 @@
         </div>
     </div>
     <div id="main-content">
-        <form action="/process" method="post" id="controle">
-            <h1>Controle de l'ecran</h1>
-            <div id="info">
-                <li>
-                    <label for="test_input">Texte à afficher</label>
-                    <input type="text" id="test_input" name="test_input" required><br>
-                </li>
+        <div class="top">
+            <form action="/process" method="post" id="controle" class="main-element">
+                <h1>Controle de l'ecran</h1>
+                <div id="info">
+                    <li>
+                        <label for="test_input">Texte à afficher</label>
+                        <input type="text" id="test_input" name="test_input" required><br>
+                    </li>
+                </div>
+                <div id="speed">
+                    <h2>Vitesse d'affichage</h2>
+                    <li>
+                        <label for="speed_input1">50%</label>
+                        <input type="radio" id="speed_input1" name="Scroll_input" required value=".2"><br>
+                    </li>
+                    <li>
+                        <label for="speed_input2">100%</label>
+                        <input type="radio" id="speed_input2" name="Scroll_input" value=".1"><br>
+                    </li>
+                    <li>
+                        <label for="speed_input3">200%</label>
+                        <input type="radio" id="speed_input3" name="Scroll_input" value=".05"><br>
+                    </li>
+                </div>
+                <div id="opacity">
+                    <h2>Luminosité</h2>
+                    <li>
+                        <label for="opacity_input1">50%</label>
+                        <input type="radio" id="opacity_input1" name="opacity_input" required value="0.25"><br>
+                    </li>
+                    <li>
+                        <label for="opacity_input2">100%</label>
+                        <input type="radio" id="opacity_input2" name="opacity_input" value="0.5"><br>
+                    </li>
+                    <li>
+                        <label for="opacity_input3">200%</label>
+                        <input type="radio" id="opacity_input3" name="opacity_input" value="1"><br>
+                    </li>
+                </div>
+                <input id="screen_submit" type="submit" value="Mettre a jour">
+            </form>
+            <div id="screen_info" class="main-element">
+                <h1>Information de l'ecran</h1>
+                <div id="screen_info_content">
+                    <h2>Texte affiché</h2>
+                    <h3>{{ screen_info['text'] }}</h3>
+                    <h2>Vitesse d'affichage</h2>
+                    <h3>{{ screen_info['speed'] }}</h3>
+                    <h2>Luminosité</h2>
+                    <h3>{{ screen_info['opacity'] }}</h3>
+                </div>
             </div>
-            <div id="speed">
-                <h2>Vitesse d'affichage</h2>
-                <li>
-                    <label for="speed_input1">50%</label>
-                    <input type="radio" id="speed_input1" name="Scroll_input" required value=".2"><br>
-                </li>
-                <li>
-                    <label for="speed_input2">100%</label>
-                    <input type="radio" id="speed_input2" name="Scroll_input" value=".1"><br>
-                </li>
-                <li>
-                    <label for="speed_input3">200%</label>
-                    <input type="radio" id="speed_input3" name="Scroll_input" value=".05"><br>
-                </li>
-            </div>
-            <div id="opacity">
-                <h2>Luminosité</h2>
-                <li>
-                    <label for="opacity_input1">50%</label>
-                    <input type="radio" id="opacity_input1" name="opacity_input" required value="0.25"><br>
-                </li>
-                <li>
-                    <label for="opacity_input2">100%</label>
-                    <input type="radio" id="opacity_input2" name="opacity_input" value="0.5"><br>
-                </li>
-                <li>
-                    <label for="opacity_input3">200%</label>
-                    <input type="radio" id="opacity_input3" name="opacity_input" value="1"><br>
-                </li>
-            </div>
-            <input id="screen_submit" type="submit" value="Mettre a jour">
-        </form>
-        <ul>
-            {% if info %}
-            <p>{{ info }}</p>
-            {% endif %}
-        </ul>
-        <div id="screen_info">
-            <h1>Information de l'ecran</h1>
-            <div id="screen_info_content">
-                <h2>Texte affiché</h2>
-                <h3>{{ screen_info['text'] }}</h3>
-                <h2>Vitesse d'affichage</h2>
-                <h3>{{ screen_info['speed'] }}</h3>
-                <h2>Luminosité</h2>
-                <h3>{{ screen_info['opacity'] }}</h3>
+        </div>
+        <div class="bottom">
+            <div id="github" class="main-element" style="border: 1px solid #ddd; padding: 30px; width: 100%; margin: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                <h2 style="margin: 0 0 10px 0; padding: 0; font-size: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">GitHub Repo Info</h2>
+                <a href="https://github.com/abstra208/phat-pi" style="display: block; margin-bottom: 10px;">Repo Page</a>
+                <a href="https://github.com/abstra208/phat-pi/wiki" style="display: block; margin-bottom: 10px;">Repo Wiki</a>
+                <a href="https://github.com/abstra208/phat-pi/issues" style="display: block; margin-bottom: 10px;">Repo Issues</a>
+                <a href="https://github.com/abstra208/phat-pi/releases" style="display: block; margin-bottom: 10px;">Repo Releases</a>
             </div>
         </div>
     </div>
     <div id="bottombar">
-        Phat Pi {{ version }}
+        <img src="{{ url_for('static', filename='img/logo_name.svg') }}" alt="">
+        {{ version }}
     </div>
 </body>
 </html>
