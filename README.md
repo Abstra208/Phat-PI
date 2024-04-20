@@ -1,3 +1,4 @@
+![Phat Pi - icon](https://github.com/Abstra208/Phat-PI/blob/main/static/img/logo_name.svg)
 # Phat-PI
 
 **This project is a web application designed to control a Scroll Phat HD screen on a Raspberry Pi. It is built using Flask and uses a simple user authentication system.**
@@ -11,7 +12,7 @@ sudo apt-get update
 sudo apt-get install python3
 ```
 
-**Next, navigate to where you want your file to be located, for exemple documents:**
+**Next, navigate to where you want your file to be located, for example, documents:**
 ```sh
 cd /home/pi/documents
 ```
@@ -31,13 +32,13 @@ cd phat-pi
 pip install -r requirements.txt
 ```
 
-**You will also need to install the Scroll Phat HD screen api:**
+**You will also need to install the Scroll Phat HD screen API:**
 ```sh
 curl https://get.pimoroni.com/scrollphathd | bash
 ```
 You do not need to do a full install, but you still can if you want
 
-**The Scroll Phat HD screen api must only be run on a Raspberry Pi using the official OS (with or without the graphic interface)**
+**The Scroll Phat HD screen API must only be run on a Raspberry Pi using the official OS (with or without the graphic interface)**
 
 ## IMPORTANT
 
@@ -52,11 +53,11 @@ You do not need to do a full install, but you still can if you want
 ```
 Running the app in a development server can be useful to try the app, but not to have it always running<br>
 This will always run the app on `http://localhost:5000`<br><br>
-**Run using gunicorn:**
+**Run using Gunicorn:**
 ```sh
 ./run.sh
 ```
-Using the gunicorn app, on the other hand is made to always run on a server or on our case, on a Raspberry Pi<br>
+Using the Gunicorn app, on the other hand, is made to always run on a server or, in our case, on a Raspberry Pi<br>
 This will always run the app on `http://localhost:8000`.<br>
 
 **To stop the app, press `ctrl + c` when the terminal is focused**
@@ -66,7 +67,7 @@ This will always run the app on `http://localhost:8000`.<br>
 - Users login and logout
 - Users management (Coming soon)
 - Control your Scroll Phat HD screen from anywhere on your network
-- Using a gunicorn server for an always running server, or a development server for testing purpose
+- Using a Gunicorn server for an always-running server, or a development server for testing purposes
 
 ## Project Structure
 
@@ -77,16 +78,16 @@ This will always run the app on `http://localhost:8000`.<br>
 ├── app.py              / The app
 ├── README.md           / Read this file before using
 ├── requirements.txt    / The requirements for this project to work
-├── run.sh              / To run the project using gunicorn
+├── run.sh              / To run the project using Gunicorn
 ├── dev.sh              / To run the project on a development server
 ├── screen.json         / The saved screen information to show
-├── users.json          / The users infomation to login
+├── users.json          / The user's information to login
 ├── screen.py           / The code to show the text on the screen
 ├── static/
 │   ├── img/            / Contain image used in this project
-│   ├── users/          / Contain the users images
+│   ├── users/          / Contain the user's images
 │   ├── style.css       / The style sheet for the two html page
-│   └── script.js       / The java script for the two html page
+│   └── script.js       / The javascript for the two html page
 └── templates/
     ├── index.html      / The main page
     └── login.html      / The page to login
@@ -98,7 +99,7 @@ This will always run the app on `http://localhost:8000`.<br>
 Contributions are always welcome! Create a pull request or donate. See [FUNDING](/.github/FUNDING.yml) for more information.
 
 **License:**<br>
-Distributed under the MIT License. See [LICENSE](/.github/LICENSE) for more information.
+It is distributed under the MIT License. See [LICENSE](/.github/LICENSE) for more information.
 
 **Contact:**<br>
 Ludovic Morin (Owner) - ludovicmorin357@hotmail.com
