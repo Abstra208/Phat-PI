@@ -28,11 +28,7 @@ def index():
         if Username in Users and Users[Username] == Passwd:
             session['username'] = Username
             session['passwd'] = Passwd
-            with open("screen.json", "r") as file:
-                json_info = file.read()
-            data_info = json.loads(json_info)
-            screen_info = data_info
-            return render_template('index.html', screen_info=screen_info, version = app_version)
+            return redirect(url_for('index'))
         else:
             return render_template('login.html', error='Identifiants invalides')
 

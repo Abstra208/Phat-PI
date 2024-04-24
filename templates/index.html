@@ -42,7 +42,7 @@
     <div id="main-content">
         <div class="top">
             <form action="/process" method="post" id="controle" class="main-element">
-                <h1>Controle de l'ecran</h1>
+                <h2 style="margin: 0 0 10px 0; padding: 0; font-size: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Controle de l'ecran</h2>
                 <div id="info">
                     <li>
                         <label for="test_input">Texte à afficher</label>
@@ -82,7 +82,7 @@
                 <input id="screen_submit" type="submit" value="Mettre a jour">
             </form>
             <div id="screen_info" class="main-element">
-                <h1>Information de l'ecran</h1>
+                <h2 style="margin: 0 0 10px 0; padding: 0; font-size: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Information de l'ecran</h2>
                 <div id="screen_info_content">
                     <h2>Texte affiché</h2>
                     <h3>{{ screen_info['text'] }}</h3>
@@ -94,18 +94,31 @@
             </div>
         </div>
         <div class="bottom">
-            <div id="github" class="main-element" style="border: 1px solid #ddd; padding: 30px; width: 100%; margin: 10px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+            <div id="exemple" class="main-element">
+                <h2 style="margin: 0 0 10px 0; padding: 0; font-size: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">Exemple de d'affichage</h2>
+                <div class="drawer">
+                    <li><h3>Horloge</h3></li>
+                    <li><h3>Phat Pi</h3></li>
+                </div>
+            </div>
+            <div id="github" class="main-element">
                 <h2 style="margin: 0 0 10px 0; padding: 0; font-size: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px;">GitHub Repo Info</h2>
                 <a href="https://github.com/abstra208/phat-pi" style="display: block; margin-bottom: 10px;">Repo Page</a>
                 <a href="https://github.com/abstra208/phat-pi/wiki" style="display: block; margin-bottom: 10px;">Repo Wiki</a>
                 <a href="https://github.com/abstra208/phat-pi/issues" style="display: block; margin-bottom: 10px;">Repo Issues</a>
                 <a href="https://github.com/abstra208/phat-pi/releases" style="display: block; margin-bottom: 10px;">Repo Releases</a>
             </div>
+
         </div>
     </div>
     <div id="bottombar">
-        <img src="{{ url_for('static', filename='img/logo_name.svg') }}" alt="">
-        {{ version }}
+        <div class="left">
+            <img src="{{ url_for('static', filename='img/logo_name.svg') }}" alt="">
+            <h2>{{ version }}</h2>
+        </div>
+        <div class="right">
+            <img src="{{ url_for('static', filename='img/github.svg') }}" alt="github">
+        </div>
     </div>
 </body>
 </html>
